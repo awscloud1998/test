@@ -15,7 +15,7 @@ jobs:
        - run:
            command: |
               echo pass="$token" >> "${BASH_ENV}"
-       - run
+       - run:
            command: |
               echo $pass
            

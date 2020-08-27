@@ -13,13 +13,6 @@ jobs:
     steps:
        - checkout
        - run:
-           name: "echo environment variables from my_context context"
-           command: echo 'export MY_ENV_VAR="$my_token"' >> $BASH_ENV
-             
-       - run:
-          name: "What was my custom environment variable?"
-          command: echo ${MY_ENV_VAR}    
-       - run:
           name: "github"
-          command: git clone https://12345naga:MY_ENV_VAR@github.com/12345naga/node.git
+          command: git clone https://12345naga:{$my_token}@github.com/12345naga/node.git
             

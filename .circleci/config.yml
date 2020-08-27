@@ -14,8 +14,7 @@ jobs:
        - checkout
        - run: 
            command: |
-              git clone https://x-access-token:${token}@github.com/12345naga/node.git
-              cd node        
+              echo $token      
            
            
              

@@ -12,13 +12,11 @@ jobs:
     working_directory: ~/project1
     steps:
        - checkout
-       - run: 
-           environment:
-                token: $token
+       - run:
            command: |
               echo pass="$token" >> "${BASH_ENV}"
-        - run
-           command:
+       - run
+           command: |
               echo $pass
            
              

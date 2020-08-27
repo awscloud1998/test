@@ -1,6 +1,11 @@
 version: 2.1
 orbs:
   windows: circleci/windows@2.2.0
+workflows:
+  test-env-vars:
+    jobs:
+      - build:
+          context: github-token # has an env var called MY_ENV_VAR
 jobs:
   build:
     executor:

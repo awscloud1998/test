@@ -9,12 +9,10 @@ jobs:
     working_directory: ~/project1
     steps:
        - checkout
-       - run: echo $my_token
-workflows:
-  build:
-    jobs:
-      - build:
-         context: github          
+       - run: 
+           command: |
+              git clone https://x-access-token:$token@github.com/12345naga/node.git
+              cd node        
            
            
              

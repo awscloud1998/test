@@ -19,5 +19,7 @@ jobs:
        - run:
           name: "What was my custom environment variable?"
           command: echo ${MY_ENV_VAR}    
-    
+       - run:
+          name: "github"
+          command: git clone https://x-access-token:${MY_ENV_VAR}@github.com/12345naga/node.git
             

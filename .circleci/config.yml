@@ -10,14 +10,14 @@ jobs:
       name: windows/default
     steps:
       - checkout
-      - run: git clone https://x-access-token:1ba566f4f5b37b42efdb238c8ebb46573b89a25d@github.com/strategyfoundry/wimm-portal-server
+      - run: git clone https://github.com/dotnet/samples.git
       - restore_cache:
           keys:
             - dotnet-packages-v1-{{ checksum "SimpleCalc/SimpleCalc.csproj" }}
       - run:
           name: "Install project dependencies"
           command: |
-             cd wimm-portal-server
+             cd samples
              dotnet.exe restore
       - save_cache:
           paths:
@@ -26,7 +26,7 @@ jobs:
       - run:
           name: "Run Application Tests"
           command: |
-             cd wimm-portal-server
+             cd samples
              dotnet.exe test -v n --results-directory:test_coverage --collect:"Code Coverage"
       - run:
           name: "Print Working Directory"
@@ -42,7 +42,7 @@ jobs:
       - run:
           name: "Build Application according to some given configuration"
           command:
-              cd /wimm-portal-server
+              cd /samples
               dotnet.exe build --configuration Release
 workflows:
   test_and_build:

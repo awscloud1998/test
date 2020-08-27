@@ -16,7 +16,7 @@ jobs:
            environment:
                 token: $token
            command: |
-              echo "$token" >> "${BASH_ENV}"     
+              echo $token 
            
            
              

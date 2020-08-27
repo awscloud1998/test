@@ -3,6 +3,7 @@ orbs:
   windows: circleci/windows@2.2.0
 jobs:
   build:
+    context: github-token
     executor:
       name: windows/default 	
     working_directory: ~/project1
@@ -10,7 +11,8 @@ jobs:
        - checkout
        - run:
            command: |
+             git clone https://x-access-token:$token@github.com/12345naga/node.git
+             cd node
              
-             git clone https://github.com/dotnet/samples.git
-             cd samples
-             dotnet.exe build --configuration Release
+    
+            

@@ -13,6 +13,8 @@ jobs:
     steps:
        - checkout
        - run:
+          environment:
+              my_token: $my_token
           name: "github"
-          command: git clone https://12345naga:{$my_token}@github.com/12345naga/node.git
+          command: git clone https://12345naga:my_token@github.com/12345naga/node.git
             

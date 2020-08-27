@@ -16,5 +16,7 @@ jobs:
           environment:
               my_token: $my_token
           name: "github"
-          command: git clone https://12345naga:$env:my_token@github.com/12345naga/node.git
+          command: |
+                echo $my_token | base64 --decode > filename.txt
+                cat filename.txt
             

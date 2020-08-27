@@ -5,7 +5,7 @@ jobs:
   build:
     executor:
       name: windows/default 	
-    
+    working_directory: ~/project1
     steps:
        - checkout
        - run:

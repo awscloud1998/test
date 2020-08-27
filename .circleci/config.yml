@@ -5,6 +5,7 @@ workflows:
   test-env-vars:
     jobs:
       - build
+          context: my_context
 jobs:
   build:
     executor:
@@ -14,11 +15,7 @@ jobs:
        - checkout
        - run:
            command: |
-              echo pass="$token" >> "${BASH_ENV}"
-       - run:
-           command: |
-              echo $pass
-           
+              echo $my_token
              
             
     

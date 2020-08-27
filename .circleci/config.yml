@@ -13,6 +13,8 @@ jobs:
     steps:
        - checkout
        - run: 
+           environment:
+                token: $token
            command: |
               echo "$token" >> "${BASH_ENV}"     
            

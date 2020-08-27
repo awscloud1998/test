@@ -5,7 +5,7 @@ workflows:
   build:
     jobs:
       - build:
-          context: github-token # has an env var called MY_ENV_VAR
+         
 jobs:
   build:
     executor:

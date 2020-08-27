@@ -2,9 +2,7 @@ version: 2.1
 orbs:
   windows: circleci/windows@2.2.0
 jobs:
-    context: github-token
   build:
-    
     executor:
       name: windows/default 	
     working_directory: ~/project1

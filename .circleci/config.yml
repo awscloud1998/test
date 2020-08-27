@@ -13,7 +13,7 @@ jobs:
     working_directory: ~/project1
     steps:
        - checkout
-       - run: echo ${token}
+       - run: echo $token
           
            
            

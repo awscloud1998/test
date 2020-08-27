@@ -14,8 +14,10 @@ jobs:
        - checkout
        - run:
            name: "echo environment variables from my_context context"
-           command: echo $my_token
+           command: echo 'export MY_ENV_VAR="$my_token"' >> $BASH_ENV
              
-            
+       - run:
+          name: "What was my custom environment variable?"
+          command: echo ${MY_ENV_VAR}    
     
             
